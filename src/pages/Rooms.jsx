@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Rooms = () => {
   const [info, setInfo] = useState([]);
@@ -17,8 +18,8 @@ const Rooms = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {info.map((room, index) => (
         <div key={index} className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
-          <div className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md" />
-
+         
+          <Link to={`/roomdetails/${room._id}`}><img src="https://i.ibb.co/FVW22BR/logo.png" alt="" /></Link>
           <div className="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800">
             <h3 className="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">{room.room_description}</h3>
 

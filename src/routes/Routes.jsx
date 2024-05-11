@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import Login from "../pages/Authentication/Login";
 import Register from "../pages/Authentication/Register";
 import Rooms from "../pages/Rooms";
+import RoomDetails from "../pages/RoomDetails";
 
 
 const router = createBrowserRouter([
@@ -21,6 +22,13 @@ const router = createBrowserRouter([
       element: <Rooms></Rooms>,
   
       },
+      {
+        path: '/roomdetails/:id',
+        element: <RoomDetails></RoomDetails>,
+        loader: ({ params }) =>
+          fetch(`${import.meta.env.VITE_URL}/roomdetails/${params.id}`),
+    
+        },
     {
       path: '/login',
       element: <Login></Login>,
