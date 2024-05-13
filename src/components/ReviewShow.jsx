@@ -12,7 +12,7 @@ const ReviewShow = () => {
     }, []); 
 
     const fetchReviews = () => {
-        fetch("http://localhost:9000/reviews")
+        fetch(`${import.meta.env.VITE_URL}/reviews`)
             .then(res => res.json())
             .then(reviewData => {
                 setReviews(reviewData);

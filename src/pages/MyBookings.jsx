@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { MdOutlineRateReview } from "react-icons/md";
 
 const MyBookings = () => {
+  
   const { user } = useContext(AuthContext);
   const [posts, setPosts] = useState([]);
 
@@ -34,12 +35,13 @@ const MyBookings = () => {
       const confirmed = await confirmDelete();
       if (confirmed) {
         const { data } = await axios.delete(
+          
           `${import.meta.env.VITE_URL}/mybooking/${id}`
         );
         console.log(data);
         toast.success("Delete Successful");
         // Update availability to "Available" in the backend
-        await axios.put(`${import.meta.env.VITE_URL}/rooms/${id}`, { availability: "Available" });
+        await axios.put(`${import.meta.env.VITE_URL}/roomsAvailable/${id}`, { availability: "Available" });
         getData();
       }
     } catch (err) {

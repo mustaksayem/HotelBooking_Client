@@ -6,13 +6,13 @@ const Rooms = () => {
   const [review, setReview] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:9000/rooms")
+    fetch(`${import.meta.env.VITE_URL}/rooms`)
       .then(res => res.json())
       .then(roomsData => {
         setInfo(roomsData); // Set rooms data
   
         // Fetch reviews data
-        fetch("http://localhost:9000/reviews")
+        fetch(`${import.meta.env.VITE_URL}/reviews`)
           .then(res => res.json())
           .then(reviewsData => {
             // Optionally, you can set the reviews data in the state if needed

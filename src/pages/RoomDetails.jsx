@@ -14,7 +14,7 @@ const RoomDetails = () => {
 
   useEffect(() => {
     // Fetch reviews data
-    fetch("http://localhost:9000/reviews")
+    fetch(`${import.meta.env.VITE_URL}/reviews`)
       .then((res) => res.json())
       .then((reviewsData) => {
         // Filter the reviews based on roomId matching id from useParams
