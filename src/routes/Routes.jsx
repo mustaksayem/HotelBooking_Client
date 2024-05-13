@@ -6,6 +6,8 @@ import Register from "../pages/Authentication/Register";
 import Rooms from "../pages/Rooms";
 import RoomDetails from "../pages/RoomDetails";
 import MyBookings from "../pages/MyBookings";
+import Review from "../pages/Review";
+import UpdateDate from "../pages/UpdateDate";
 
 
 const router = createBrowserRouter([
@@ -46,6 +48,18 @@ const router = createBrowserRouter([
           element: <MyBookings></MyBookings>,
       
           },
+          {
+            path: '/review/:id',
+            element: <Review></Review>,
+            loader: ({ params }) =>
+              fetch(`${import.meta.env.VITE_URL}/booking/${params.id}`)
+            },
+            {
+              path: '/update/:id',
+              element: <UpdateDate></UpdateDate>,
+              loader: ({ params }) =>
+                fetch(`${import.meta.env.VITE_URL}/update/${params.id}`)
+              },
    ]
    },
 ])
