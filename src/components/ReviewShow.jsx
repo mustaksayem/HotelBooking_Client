@@ -37,13 +37,13 @@ const ReviewShow = () => {
 
     return (
        <div className=" border-t-4 border-blue-500">
-         <section className="testimonial-container  ">
+         <section className="testimonial-container bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-gray-200 ">
             <div className="title mt-6">
                 <h2>Testimonial</h2>
                 <p>What members are saying.</p>
             </div>
 
-            <div className="slider-container">
+            <div className="slider-container bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-gray-200">
                 <Splide
                     options={{
                         perPage: 1,
@@ -55,9 +55,9 @@ const ReviewShow = () => {
                     }}
                 >
                     {reviews.map((review) => (
-                        <SplideSlide key={review.id}>
-                            <div className="content">
-                                <p className="text">{review.email}</p>
+                        <SplideSlide className='bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-gray-200' key={review.id}>
+                            <div className="content ">
+                                <p className=" text-slate-600 dark:text-gray-200 ">{review.email}</p>
                                 <div className="info">
                                     <div className="rating">
                                         {renderStars(review.rating)}

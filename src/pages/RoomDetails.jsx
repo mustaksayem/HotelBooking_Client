@@ -21,6 +21,7 @@ import 'swiper/css/navigation';
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -93,6 +94,7 @@ const RoomDetails = () => {
 // okkkkkk
   return (
     <div>
+      <Helmet> <title>RoomDetails</title></Helmet>
       <div className="flex flex-col md:flex-col lg:flex-row gap-3 justify-center items-center">
         <div className="w-full lg:w-1/2   rounded-2xl items-center p-2 flex   justify-center">
           

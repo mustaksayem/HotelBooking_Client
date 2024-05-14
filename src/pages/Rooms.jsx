@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const Rooms = () => {
@@ -23,7 +24,9 @@ const Rooms = () => {
   
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-6">
+  <div>
+   <Helmet> <title>Rooms</title></Helmet>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-6 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-gray-200 py-6">
       {info.map((room, index) => (
         <div key={index} className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
           {/* Display the number of reviews for each room */}
@@ -44,6 +47,7 @@ const Rooms = () => {
         </div>
       ))}
     </div>
+  </div>
   );
 };
 

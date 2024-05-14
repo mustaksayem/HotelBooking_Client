@@ -19,7 +19,7 @@ const Newsletter = () => {
         </div> */}
     </nav>
 
-    <div className="container px-6 py-16 mx-auto bg-[#f6f6f6]">
+    <div className="container px-6 py-16 mx-auto bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-gray-200">
         <div className="items-center lg:flex">
 
         <div className="flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2">

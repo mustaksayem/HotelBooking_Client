@@ -5,6 +5,7 @@ import MapHome from "../components/MapHome";
 import Newsletter from "../components/Newsletter";
 import ReviewShow from "../components/ReviewShow";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   useEffect(() => {
@@ -13,10 +14,12 @@ const Home = () => {
   }, []); // Empty dependency array to run only once when the component mounts
 
   return (
-    <div>
+    <div className="bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-gray-200">
+      <Helmet> <title>Home</title></Helmet>
+      <div>
       {/* Modal */}
-      <dialog id="my_modal_1" className="modal">
-        <div className="modal-box w-[80vh]">
+      <dialog id="my_modal_1" className="modal ">
+        <div className="modal-box w-[80vh] bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-gray-200">
           <div>
           <div className="hero " style={{backgroundImage: 'url(https://i.ibb.co/Y7V6cRK/newsleeter.jpg)'}}>
   <div className="hero-overlay bg-opacity-60"></div>
@@ -44,6 +47,7 @@ const Home = () => {
       <Newsletter />
       <ReviewShow />
       <MapHome />
+    </div>
     </div>
   );
 };

@@ -8,11 +8,13 @@ import RoomDetails from "../pages/RoomDetails";
 import MyBookings from "../pages/MyBookings";
 import Review from "../pages/Review";
 import UpdateDate from "../pages/UpdateDate";
+import Error from "../pages/Error";
 
 
 const router = createBrowserRouter([
    {
     path: '/',
+    errorElement:<Error></Error>,
     element: <Main></Main>,
     children: [
       {

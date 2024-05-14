@@ -3,6 +3,7 @@ import bgImage from '../../assets/images/loginimage.jpg'
 import { useContext, useEffect } from "react"
 import { AuthContext } from "../../provider/AuthProvider"
 import toast from 'react-hot-toast'
+import { Helmet } from "react-helmet-async"
 const Login = () => {
   const {signIn,signInWithGoogle,user,loading}=useContext(AuthContext)
   const navigate = useNavigate();
@@ -48,7 +49,10 @@ const Login = () => {
      if (user || loading) return;
 
     return (
-      <div className='flex justify-center items-center min-h-[calc(100vh-306px)] my-10'>
+      
+      <div>
+        <Helmet> <title>Login</title></Helmet>
+        <div className='flex justify-center items-center min-h-[calc(100vh-306px)] my-10'>
         <div className='flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg  lg:max-w-4xl '>
           <div
             className='hidden bg-cover bg-center lg:block lg:w-1/2'
@@ -162,6 +166,7 @@ const Login = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     )
   }
