@@ -10,13 +10,13 @@ const Rooms = () => {
     fetch(`${import.meta.env.VITE_URL}/rooms`)
       .then(res => res.json())
       .then(roomsData => {
-        setInfo(roomsData); // Set rooms data
+        setInfo(roomsData); 
   
-        // Fetch reviews data
+        
         fetch(`${import.meta.env.VITE_URL}/reviews`)
           .then(res => res.json())
           .then(reviewsData => {
-            // Optionally, you can set the reviews data in the state if needed
+            
             setReview(reviewsData);
           });
       });
@@ -29,7 +29,7 @@ const Rooms = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-6 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-gray-200 py-6">
       {info.map((room, index) => (
         <div key={index} className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
-          {/* Display the number of reviews for each room */}
+         
           
 
           <Link to={`/roomdetails/${room._id}`}><img className="h-[50vh]" src={room.room_images[0]} alt="" />     </Link>
