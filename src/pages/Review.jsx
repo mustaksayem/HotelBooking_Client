@@ -11,7 +11,6 @@ const Review = () => {
 
   const { user } = useContext(AuthContext);
 
-  // fhjk
   const { id } = useParams();
   const post = useLoaderData();
 

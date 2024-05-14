@@ -7,28 +7,14 @@ import toast from "react-hot-toast";
 
 import "react-datepicker/dist/react-datepicker.css";
 
-
-// okkkkkkkkkk
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-// import './styles.css';
-
-// import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { Helmet } from "react-helmet-async";
-
-
-
-
-
-
-
 
 const RoomDetails = () => {
   const [review, setReview] = useState([]);
@@ -91,7 +77,7 @@ const RoomDetails = () => {
     toggleModal(false);
     navigate("/mybookings")
   }
-// okkkkkk
+
   return (
     <div className="bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-gray-200">
       <Helmet> <title>RoomDetails</title></Helmet>
@@ -119,19 +105,6 @@ const RoomDetails = () => {
         <SwiperSlide><img className="w-full" src={room_images[2]} alt="" /></SwiperSlide>
        
       </Swiper>
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
         <div className="w-1/3  ">
           <h2 className="text-[40px] font-bold text-gray-500">{room_description}</h2>
@@ -193,7 +166,7 @@ const RoomDetails = () => {
                       </svg>
                     </button>
                   </div>
-                  {/* Display room booking details */}
+                 
                   {roomBookingDetails && (
                     <div>
                       <p>Room Description: {roomBookingDetails.room_description}</p>
