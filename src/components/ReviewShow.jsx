@@ -43,7 +43,7 @@ const ReviewShow = () => {
                 <p>What members are saying.</p>
             </div>
 
-            <div className="slider-container bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-gray-200">
+            <div className="slider-container pb-6 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-gray-200">
                 <Splide
                     options={{
                         perPage: 1,
@@ -55,7 +55,7 @@ const ReviewShow = () => {
                     }}
                 >
                     {reviews.map((review) => (
-                        <SplideSlide className='bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-gray-200' key={review.id}>
+                        <SplideSlide className=' bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-gray-200' key={review.id}>
                             <div className="content ">
                                 <p className=" text-slate-600 dark:text-gray-200 ">{review.email}</p>
                                 <div className="info">

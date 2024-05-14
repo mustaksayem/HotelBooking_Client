@@ -93,10 +93,10 @@ const RoomDetails = () => {
   }
 // okkkkkk
   return (
-    <div>
+    <div className="bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-gray-200">
       <Helmet> <title>RoomDetails</title></Helmet>
       <div className="flex flex-col md:flex-col lg:flex-row gap-3 justify-center items-center">
-        <div className="w-full lg:w-1/2   rounded-2xl items-center p-2 flex   justify-center">
+        <div className="w-full lg:w-1/3  rounded-2xl items-center p-2 flex   justify-center">
           
 
 
@@ -133,7 +133,7 @@ const RoomDetails = () => {
 
 
         </div>
-        <div className="w-1/2 text-center ">
+        <div className="w-1/3  ">
           <h2 className="text-[40px] font-bold text-gray-500">{room_description}</h2>
           <p className="mt-4 mb-6 font-medium text-xl text-gray-500">Room Size: {room_size}</p>
           <p className="mt-4 mb-6 font-medium text-xl text-gray-500">Price per night: ${price_per_night}</p>
@@ -158,7 +158,7 @@ const RoomDetails = () => {
               <div>
                 <p>Booking Date</p>
                 <DatePicker
-                  className="border mt-2 p-2 rounded-md "
+                  className="border mt-2 p-2 rounded-md bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-gray-200 "
                   selected={startDate}
                   onChange={(date) => setStartDate(date)}
                 />
@@ -169,14 +169,14 @@ const RoomDetails = () => {
                 <button
                   disabled={availability === "Booked"}
                   type="submit"
-                  className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
+                  className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-green-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
                 >
                   {availability === "Booked" ? "Booked" : "Book Now"}
                 </button>
               )}
               {!user && (
                 <Link to={"/login"}>
-                  <button className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">
+                  <button className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-green-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">
                     Book Now
                   </button>{" "}
                 </Link>
