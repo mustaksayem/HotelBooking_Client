@@ -14,9 +14,6 @@ const Login = () => {
     }
   }, [navigate, user]);
 
-
-    
-    // google signin
     const handleGoogleSignIn =async()=>{
    try{
     const result= await signInWithGoogle()
@@ -35,7 +32,7 @@ const Login = () => {
     toast.error(err?.message)
    }
     }
-    // email signin
+    
      const handleSignin = async e =>{
         e.preventDefault()
         const form = e.target 
@@ -83,10 +80,6 @@ const Login = () => {
                 alt=''
               />
             </div>
-  
-  
-            
-  
             <div className='flex items-center justify-between mt-4'>
               <span className='w-1/5 border-b  lg:w-1/4'></span>
   
