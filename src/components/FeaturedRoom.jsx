@@ -12,15 +12,15 @@ const FeaturedRoom = () => {
           <div>
             <img
               className="object-cover w-full h-56"
-              src="https://images.unsplash.com/photo-1542156822-6924d1a71ace?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+              src="https://i.ibb.co/8BdSV21/h-1.jpg"
               alt="avatar"
             />
           </div>
 
           <div className="flex justify-center items-center flex-col">
             <div className="py-5 text-center ">
-              <div className="block text-xl font-bold text-gray-800 dark:text-white">John Doe</div>
-              <div className="text-sm  text-gray-700 dark:text-gray-200">Software Engineer</div>
+              <div className="block text-xl font-bold text-gray-800 dark:text-white">Single Room with Pool</div>
+              <div className="text-sm  text-gray-700 dark:text-gray-200">Available</div>
               <div className="mt-4">
               <Link
                 to="/rooms"
@@ -38,15 +38,15 @@ const FeaturedRoom = () => {
           <div>
             <img
               className="object-cover w-full h-56"
-              src="https://images.unsplash.com/photo-1542156822-6924d1a71ace?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+              src="https://i.ibb.co/tqctn8p/h-2.jpg"
               alt="avatar"
             />
           </div>
 
           <div className="flex justify-center items-center flex-col">
             <div className="py-5 text-center ">
-              <div className="block text-xl font-bold text-gray-800 dark:text-white">John Doe</div>
-              <div className="text-sm  text-gray-700 dark:text-gray-200">Software Engineer</div>
+              <div className="block text-xl font-bold text-gray-800 dark:text-white">Double Room With Dining Facilities</div>
+              <div className="text-sm  text-gray-700 dark:text-gray-200">Available</div>
               <div className="mt-4">
               <Link
                 to="/rooms"
@@ -64,15 +64,15 @@ const FeaturedRoom = () => {
           <div>
             <img
               className="object-cover w-full h-56"
-              src="https://images.unsplash.com/photo-1542156822-6924d1a71ace?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+              src="https://i.ibb.co/rM8Ld1S/h-3.webp"
               alt="avatar"
             />
           </div>
 
           <div className="flex justify-center items-center flex-col">
             <div className="py-5 text-center ">
-              <div className="block text-xl font-bold text-gray-800 dark:text-white">John Doe</div>
-              <div className="text-sm  text-gray-700 dark:text-gray-200">Software Engineer</div>
+              <div className="block text-xl font-bold text-gray-800 dark:text-white">Single Room With Nature View</div>
+              <div className="text-sm  text-gray-700 dark:text-gray-200">Available</div>
               <div className="mt-4">
               <Link
                 to="/rooms"
@@ -91,15 +91,15 @@ const FeaturedRoom = () => {
           <div>
             <img
               className="object-cover w-full h-56"
-              src="https://images.unsplash.com/photo-1542156822-6924d1a71ace?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+              src="https://i.ibb.co/0D1pGxY/h-4.webp"
               alt="avatar"
             />
           </div>
 
           <div className="flex justify-center items-center flex-col">
             <div className="py-5 text-center ">
-              <div className="block text-xl font-bold text-gray-800 dark:text-white">John Doe</div>
-              <div className="text-sm  text-gray-700 dark:text-gray-200">Software Engineer</div>
+              <div className="block text-xl font-bold text-gray-800 dark:text-white">Single Room</div>
+              <div className="text-sm  text-gray-700 dark:text-gray-200">Available</div>
               <div className="mt-4">
               <Link
                 to="/rooms"
@@ -117,15 +117,15 @@ const FeaturedRoom = () => {
           <div>
             <img
               className="object-cover w-full h-56"
-              src="https://images.unsplash.com/photo-1542156822-6924d1a71ace?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+              src="https://i.ibb.co/JBS2YnW/h-5.jpg"
               alt="avatar"
             />
           </div>
 
           <div className="flex justify-center items-center flex-col">
             <div className="py-5 text-center ">
-              <div className="block text-xl font-bold text-gray-800 dark:text-white">John Doe</div>
-              <div className="text-sm  text-gray-700 dark:text-gray-200">Software Engineer</div>
+              <div className="block text-xl font-bold text-gray-800 dark:text-white">Double Room With Swimming Facility </div>
+              <div className="text-sm  text-gray-700 dark:text-gray-200">Available</div>
               <div className="mt-4">
               <Link
                 to="/rooms"
@@ -143,15 +143,15 @@ const FeaturedRoom = () => {
           <div>
             <img
               className="object-cover w-full h-56"
-              src="https://images.unsplash.com/photo-1542156822-6924d1a71ace?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+              src="https://i.ibb.co/c155jQ9/h-6.jpg"
               alt="avatar"
             />
           </div>
 
           <div className="flex justify-center items-center flex-col">
             <div className="py-5 text-center ">
-              <div className="block text-xl font-bold text-gray-800 dark:text-white">John Doe</div>
-              <div className="text-sm  text-gray-700 dark:text-gray-200">Software Engineer</div>
+              <div className="block text-xl font-bold text-gray-800 dark:text-white">Swimming with Open Sky</div>
+              <div className="text-sm  text-gray-700 dark:text-gray-200">Available</div>
               <div className="mt-4">
               <Link
                 to="/rooms"

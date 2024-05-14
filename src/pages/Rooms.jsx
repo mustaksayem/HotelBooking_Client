@@ -29,7 +29,7 @@ const Rooms = () => {
           {/* Display the number of reviews for each room */}
           
 
-          <Link to={`/roomdetails/${room._id}`}><img src="https://i.ibb.co/FVW22BR/logo.png" alt="" /></Link>
+          <Link to={`/roomdetails/${room._id}`}><img className="h-[50vh]" src={room.room_images[0]} alt="" />     </Link>
           <div className="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800">
             <h3 className="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">{room.room_description}</h3>
 

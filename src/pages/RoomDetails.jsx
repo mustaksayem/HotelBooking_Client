@@ -7,6 +7,28 @@ import toast from "react-hot-toast";
 
 import "react-datepicker/dist/react-datepicker.css";
 
+
+// okkkkkkkkkk
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+// import './styles.css';
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+
+
+
+
+
+
+
+
 const RoomDetails = () => {
   const [review, setReview] = useState([]);
   const { id } = useParams();
@@ -68,12 +90,46 @@ const RoomDetails = () => {
     toggleModal(false);
     navigate("/mybookings")
   }
-
+// okkkkkk
   return (
     <div>
       <div className="flex flex-col md:flex-col lg:flex-row gap-3 justify-center items-center">
-        <div className="w-full lg:w-1/2  bg-[#23BE0A0D] rounded-2xl items-center p-2 flex   justify-center">
-          <img className="" src={room_images[0]} alt="" />
+        <div className="w-full lg:w-1/2   rounded-2xl items-center p-2 flex   justify-center">
+          
+
+
+          <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper"
+      >
+        <SwiperSlide><img className="w-full" src={room_images[0]} alt="" />  </SwiperSlide>
+        <SwiperSlide><img className="w-full" src={room_images[1]} alt="" /></SwiperSlide>
+        <SwiperSlide><img className="w-full" src={room_images[2]} alt="" /></SwiperSlide>
+       
+      </Swiper>
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
         <div className="w-1/2 text-center ">
           <h2 className="text-[40px] font-bold text-gray-500">{room_description}</h2>

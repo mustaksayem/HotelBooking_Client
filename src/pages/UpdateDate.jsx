@@ -42,9 +42,9 @@ const UpdateDate = () => {
   
 
   return (
-    <div>
+    <div className="min-h-[50vh]">
       <form onSubmit={handleFormSubmission}>
-        <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+        <div className="flex justify-center items-center gap-6 mt-4 pt-24 sm:grid-cols-2 ">
           <div>
             <label className="text-gray-700 dark:text-gray-200" htmlFor="emailAddress">
               Email Address
