@@ -36,8 +36,9 @@ const ReviewShow = () => {
     };
 
     return (
-        <section className="testimonial-container">
-            <div className="title">
+       <div className=" border-t-4 border-blue-500">
+         <section className="testimonial-container  ">
+            <div className="title mt-6">
                 <h2>Testimonial</h2>
                 <p>What members are saying.</p>
             </div>
@@ -71,6 +72,7 @@ const ReviewShow = () => {
                 </Splide>
             </div>
         </section>
+       </div>
     );
 };
 

@@ -34,9 +34,9 @@ const Carousel = () => {
           modules={[Autoplay, Pagination, Navigation]}
           className="mySwiper"
         >
-          <SwiperSlide> <Slide image = {slider1} text='slide1'></Slide>  </SwiperSlide>
-          <SwiperSlide> <Slide image = {slider2} text='slide2'></Slide>  </SwiperSlide>
-          <SwiperSlide> <Slide image = {slider3} text='slide3'></Slide>  </SwiperSlide>
+          <SwiperSlide> <Slide image = {slider1} text='Indulge in Tranquility: Welcome to Our Luxurious Hotel Rooms! Escape the Ordinary, Embrace the Extraordinary.'></Slide>  </SwiperSlide>
+          <SwiperSlide> <Slide image = {slider2} text='Unwind in Style: Discover Your Home Away from Home in Our Exquisite Hotel Rooms. Immerse Yourself in Comfort and Elegance. Reserve Your Blissful Retreat Now!'></Slide>  </SwiperSlide>
+          <SwiperSlide> <Slide image = {slider3} text='Elevate Your Stay: Experience Unparalleled Comfort in Our Chic Hotel Rooms. Where Every Detail is Crafted for Your Ultimate Relaxation.'></Slide>  </SwiperSlide>
           
         </Swiper>
        </div>

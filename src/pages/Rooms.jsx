@@ -23,11 +23,11 @@ const Rooms = () => {
   
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-6">
       {info.map((room, index) => (
         <div key={index} className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
           {/* Display the number of reviews for each room */}
-          <p>Number of Reviews: {review.filter(item => item.roomId2 === room._id).length}</p>
+          
 
           <Link to={`/roomdetails/${room._id}`}><img src="https://i.ibb.co/FVW22BR/logo.png" alt="" /></Link>
           <div className="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800">
@@ -39,6 +39,7 @@ const Rooms = () => {
                Per Night: {room.price_per_night} 
               </span>
             </div>
+            <p className="text-center">Number of Reviews: {review.filter(item => item.roomId2 === room._id).length}</p>
           </div>
         </div>
       ))}

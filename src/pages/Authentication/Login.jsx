@@ -1,11 +1,19 @@
 import { Link, useNavigate } from "react-router-dom"
 import bgImage from '../../assets/images/loginimage.jpg'
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { AuthContext } from "../../provider/AuthProvider"
 import toast from 'react-hot-toast'
 const Login = () => {
-    const navigate = useNavigate()
-    const {signIn,signInWithGoogle}=useContext(AuthContext)
+  const {signIn,signInWithGoogle,user,loading}=useContext(AuthContext)
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [navigate, user]);
+
+
+    
     // google signin
     const handleGoogleSignIn =async()=>{
    try{
@@ -37,7 +45,7 @@ const Login = () => {
         }
      }
 
-
+     if (user || loading) return;
 
     return (
       <div className='flex justify-center items-center min-h-[calc(100vh-306px)] my-10'>

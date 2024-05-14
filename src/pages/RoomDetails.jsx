@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { useLoaderData, useNavigate, useParams } from "react-router-dom";
+import { Link, useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import DatePicker from "react-datepicker";
 import axios from "axios";
@@ -10,35 +10,27 @@ import "react-datepicker/dist/react-datepicker.css";
 const RoomDetails = () => {
   const [review, setReview] = useState([]);
   const { id } = useParams();
-  console.log(id);
-
-  useEffect(() => {
-    // Fetch reviews data
-    fetch(`${import.meta.env.VITE_URL}/reviews`)
-      .then((res) => res.json())
-      .then((reviewsData) => {
-        // Filter the reviews based on roomId matching id from useParams
-        const filteredReview = reviewsData.filter(
-          (review) => review.roomId2 === id
-        );
-        setReview(filteredReview);
-      });
-  }, [id]);
 
   const navigate = useNavigate();
   const [startDate, setStartDate] = useState(new Date());
   const { user } = useContext(AuthContext);
   const data = useLoaderData();
-  console.log(data);
-  const {
-    room_description,
-    price_per_night,
-    availability,
-    room_size,
-    room_images,
-    special_offers,
-    _id,
-  } = data || {};
+  const { room_description, price_per_night, availability, room_size, room_images, special_offers, _id } = data || {};
+
+  const [showModal, setShowModal] = useState(false);
+  const [roomBookingDetails, setRoomBookingDetails] = useState(null);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_URL}/reviews`)
+      .then((res) => res.json())
+      .then((reviewsData) => {
+        setReview(reviewsData);
+      });
+  }, []);
+
+  const toggleModal = (show) => {
+    setShowModal(show);
+  };
 
   const handleFormSubmission = async (e) => {
     e.preventDefault();
@@ -56,27 +48,26 @@ const RoomDetails = () => {
       availability,
       roomId,
       room_images,
-      special_offers,
+      special_offers
     };
 
     const updateavalability = { availability };
     try {
-      const { data } = await axios.post(
-        `${import.meta.env.VITE_URL}/booking`,
-        bookRoom
-      );
-      console.log(data);
-      toast.success("Booked Room");
-      const { data2 } = await axios.put(
-        `${import.meta.env.VITE_URL}/rooms/${roomId}`,
-        updateavalability
-      );
-      console.log(data2);
-      navigate("/mybookings");
+      const { data } = await axios.post(`${import.meta.env.VITE_URL}/booking`, bookRoom);
+      const { data2 } = await axios.put(`${import.meta.env.VITE_URL}/rooms/${roomId}`, updateavalability);
+      setRoomBookingDetails(bookRoom); // Set room booking details in state
+      toggleModal(true); // Show modal
+      // toast.success("Booked Room");
     } catch (err) {
       console.log(err);
     }
   };
+
+  const handleClick = ()=>{
+    toast.success("Data Inserted")
+    toggleModal(false);
+    navigate("/mybookings")
+  }
 
   return (
     <div>
@@ -85,31 +76,17 @@ const RoomDetails = () => {
           <img className="" src={room_images[0]} alt="" />
         </div>
         <div className="w-1/2 text-center ">
-          <h2 className="text-[40px] font-bold text-gray-500">
-            {room_description}
-          </h2>
-          <p className="mt-4 mb-6 font-medium text-xl text-gray-500">
-            Room Size: {room_size}
-          </p>
-
-          <p className="mt-4 mb-6 font-medium text-xl text-gray-500">
-            Price per night: ${price_per_night}
-          </p>
-          <p className="mt-4 mb-6 font-medium text-xl text-gray-500">
-            Availability: {availability}
-          </p>
-          <p className="mt-4 mb-6 font-medium text-xl text-gray-500">
-            Offer: {special_offers}
-          </p>
+          <h2 className="text-[40px] font-bold text-gray-500">{room_description}</h2>
+          <p className="mt-4 mb-6 font-medium text-xl text-gray-500">Room Size: {room_size}</p>
+          <p className="mt-4 mb-6 font-medium text-xl text-gray-500">Price per night: ${price_per_night}</p>
+          <p className="mt-4 mb-6 font-medium text-xl text-gray-500">Availability: {availability}</p>
+          <p className="mt-4 mb-6 font-medium text-xl text-gray-500">Offer: {special_offers}</p>
         </div>
         <div>
           <form onSubmit={handleFormSubmission}>
             <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
               <div>
-                <label
-                  className="text-gray-700 dark:text-gray-200"
-                  htmlFor="emailAddress"
-                >
+                <label className="text-gray-700 dark:text-gray-200" htmlFor="emailAddress">
                   Email Address
                 </label>
                 <input
@@ -130,27 +107,47 @@ const RoomDetails = () => {
               </div>
             </div>
             <div className="flex justify-center m-4">
-              <button
-                disabled={availability === "Booked"}
-                type="submit"
-                className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
-              >
-                {availability === "Booked" ? "Booked" : "Book Now"}
-              </button>
+              {user && (
+                <button
+                  disabled={availability === "Booked"}
+                  type="submit"
+                  className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
+                >
+                  {availability === "Booked" ? "Booked" : "Book Now"}
+                </button>
+              )}
+              {!user && (
+                <Link to={"/login"}>
+                  <button className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">
+                    Book Now
+                  </button>{" "}
+                </Link>
+              )}
             </div>
+            {showModal && (
+              <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 z-50">
+                <div className="bg-white p-6 rounded-lg shadow-lg max-w-md">
+                  <div className="flex justify-between items-center mb-4">
+                    <h2 className="text-xl font-bold">Room Summary</h2>
+                    <button onClick={() => toggleModal(false)} className="text-gray-500 hover:text-gray-700 focus:outline-none">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+                  </div>
+                  {/* Display room booking details */}
+                  {roomBookingDetails && (
+                    <div>
+                      <p>Room Description: {roomBookingDetails.room_description}</p>
+                      <p>Price Per Night: ${roomBookingDetails.price_per_night}</p>
+                      <p>Booking Date: {roomBookingDetails.bookingDate.toString()}</p>
+                    </div>
+                  )}
+                  <button onClick={()=>handleClick()} type="submit">Confirm</button>
+                </div>
+              </div>
+            )}
           </form>
-        </div>
-      </div>
-      {/* Displaying Reviews */}
-      <div className="mt-8">
-        <h2 className="text-2xl font-bold mb-4">Reviews</h2>
-        <div>
-          {review.map((reviewItem, index) => (
-            <div key={index} className="mb-4 border rounded-md p-4">
-              <p className="font-semibold">{reviewItem.email}</p>
-              <p>{reviewItem.reviewText}</p>
-            </div>
-          ))}
         </div>
       </div>
     </div>

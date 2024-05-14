@@ -1,16 +1,51 @@
+import React, { useEffect } from "react";
 import Carousel from "../components/Carousel";
+import FeaturedRoom from "../components/FeaturedRoom";
 import MapHome from "../components/MapHome";
+import Newsletter from "../components/Newsletter";
 import ReviewShow from "../components/ReviewShow";
-
+import { Link } from "react-router-dom";
 
 const Home = () => {
-    return (
-        <div>
-            <Carousel></Carousel>
-            <ReviewShow></ReviewShow>
-            <MapHome></MapHome>
+  useEffect(() => {
+    // Open the modal when the component mounts
+    document.getElementById("my_modal_1").showModal();
+  }, []); // Empty dependency array to run only once when the component mounts
+
+  return (
+    <div>
+      {/* Modal */}
+      <dialog id="my_modal_1" className="modal">
+        <div className="modal-box w-[80vh]">
+          <div>
+          <div className="hero " style={{backgroundImage: 'url(https://i.ibb.co/Y7V6cRK/newsleeter.jpg)'}}>
+  <div className="hero-overlay bg-opacity-60"></div>
+  <div className="hero-content text-center text-neutral-content">
+    <div className="max-w-md">
+      <h1 className="mb-5 text-5xl font-bold text-red-700">50% Discount For New User</h1>
+     
+     {/* <Link to='/login'> <button className="btn btn-primary">Book Now</button></Link> */}
+    </div>
+  </div>
+</div>
+          </div>
+          <div className="modal-action">
+            <form method="dialog">
+            
+              <button className="btn">Close</button>
+            </form>
+          </div>
         </div>
-    );
+      </dialog>
+
+      {/* Other components */}
+      <Carousel />
+      <FeaturedRoom />
+      <Newsletter />
+      <ReviewShow />
+      <MapHome />
+    </div>
+  );
 };
 
 export default Home;
