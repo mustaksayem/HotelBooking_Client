@@ -9,15 +9,15 @@ import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   useEffect(() => {
-    // Open the modal when the component mounts
+    
     document.getElementById("my_modal_1").showModal();
-  }, []); // Empty dependency array to run only once when the component mounts
+  }, []); 
 
   return (
     <div className="bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-gray-200">
       <Helmet> <title>Home</title></Helmet>
       <div>
-      {/* Modal */}
+    
       <dialog id="my_modal_1" className="modal ">
         <div className="modal-box w-[80vh] bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-gray-200">
           <div>
@@ -27,7 +27,7 @@ const Home = () => {
     <div className="max-w-md">
       <h1 className="mb-5 text-5xl font-bold text-red-700">50% Discount For New User</h1>
      
-     {/* <Link to='/login'> <button className="btn btn-primary">Book Now</button></Link> */}
+   
     </div>
   </div>
 </div>
@@ -41,7 +41,7 @@ const Home = () => {
         </div>
       </dialog>
 
-      {/* Other components */}
+   
       <Carousel />
       <FeaturedRoom />
       <Newsletter />
