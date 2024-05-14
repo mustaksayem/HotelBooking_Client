@@ -4,6 +4,7 @@ import { useContext, useEffect } from "react"
 import { AuthContext } from "../../provider/AuthProvider"
 import toast from 'react-hot-toast'
 import { Helmet } from "react-helmet-async"
+import axios from "axios"
 const Login = () => {
   const {signIn,signInWithGoogle,user,loading}=useContext(AuthContext)
   const navigate = useNavigate();
@@ -18,7 +19,14 @@ const Login = () => {
     // google signin
     const handleGoogleSignIn =async()=>{
    try{
-    await signInWithGoogle()
+    const result= await signInWithGoogle()
+
+    const { data } = await axios.post(
+      `${import.meta.env.VITE_URL}/jwt`,
+      { email: result?.user?.email },
+      { withCredentials: true }
+    );
+    console.log(data);
     toast.success('Signin sucessfully')
     navigate ('/') 
    }
@@ -36,7 +44,13 @@ const Login = () => {
         console.log(email,pass);
         try{
             const result = await signIn(email,pass)
+            const { data } = await axios.post(
+              `${import.meta.env.VITE_URL}/jwt`,
+              { email: result?.user?.email },
+              { withCredentials: true }
+            );
             console.log(result);
+            console.log(data);
             navigate('/')
             toast.success('Signin Sucessfully')
         }
@@ -52,7 +66,7 @@ const Login = () => {
       
       <div>
         <Helmet> <title>Login</title></Helmet>
-        <div className='flex justify-center items-center min-h-[calc(100vh-306px)] my-10'>
+        <div className='flex justify-center items-center min-h-[calc(100vh-306px)] py-10 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-gray-200'>
         <div className='flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg  lg:max-w-4xl '>
           <div
             className='hidden bg-cover bg-center lg:block lg:w-1/2'
@@ -61,7 +75,7 @@ const Login = () => {
             }}
           ></div>
   
-          <div className='w-full px-6 py-8 md:px-8 lg:w-1/2'>
+          <div className='w-full px-6 py-8 md:px-8 lg:w-1/2 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-gray-200'>
             <div className='flex justify-center mx-auto'>
               <img
                 className='w-20 h-7 sm:h-8'

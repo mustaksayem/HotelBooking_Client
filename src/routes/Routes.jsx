@@ -59,7 +59,7 @@ const router = createBrowserRouter([
             },
             {
               path: '/update/:id',
-              element: <UpdateDate></UpdateDate>,
+              element: <PrivateRoute><UpdateDate></UpdateDate></PrivateRoute>,
               loader: ({ params }) =>
                 fetch(`${import.meta.env.VITE_URL}/update/${params.id}`)
               },

@@ -18,7 +18,7 @@ const MyBookings = () => {
 
   const getData = async () => {
     const { data } = await axios(
-      `${import.meta.env.VITE_URL}/mybookings/${user?.email}`
+      `${import.meta.env.VITE_URL}/mybookings/${user?.email}`, {withCredentials:true}
     );
     setPosts(data);
   };
