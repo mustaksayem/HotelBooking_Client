@@ -100,9 +100,9 @@ const RoomDetails = () => {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide><img className="w-full" src={room_images[0]} alt="" />  </SwiperSlide>
-        <SwiperSlide><img className="w-full" src={room_images[1]} alt="" /></SwiperSlide>
-        <SwiperSlide><img className="w-full" src={room_images[2]} alt="" /></SwiperSlide>
+        <SwiperSlide><div className="w-full"><img className="w-full h-[50vh] " src={room_images[0]} alt="" /> </div> </SwiperSlide>
+        <SwiperSlide><img className="w-full  h-[50vh] " src={room_images[1]} alt="" /></SwiperSlide>
+        <SwiperSlide><img className="w-full  h-[50vh] " src={room_images[2]} alt="" /></SwiperSlide>
        
       </Swiper>
         </div>
@@ -181,6 +181,24 @@ const RoomDetails = () => {
           </form>
         </div>
       </div>
+      
+     
+      <div className="mt-8 flex justify-center">
+  <div className="max-w-3xl w-full">
+    <h2 className="text-2xl font-bold mb-4">Reviews</h2>
+    <div>
+      {review
+        .filter(reviewItem => reviewItem.roomId2 === id) // Filter reviews by roomId
+        .map((reviewItem, index) => (
+          <div key={index} className="mb-4 border rounded-md p-4">
+            <p className="font-semibold">{reviewItem.email}</p>
+            <p>{reviewItem.reviewText}</p>
+          </div>
+        ))}
+    </div>
+  </div>
+</div>
+
     </div>
   );
 };

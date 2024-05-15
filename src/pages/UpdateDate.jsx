@@ -10,13 +10,12 @@ const UpdateDate = () => {
   const { user } = useContext(AuthContext);
   const [startDate, setStartDate] = useState(new Date());
   const post = useLoaderData();
-  const { id } = useParams(); // Added parentheses for useParams
+  const { id } = useParams(); 
   const { _id, roomId } = post || {};
   const navigate = useNavigate();
   const handleFormSubmission = async (e) => {
     e.preventDefault();
   
-    // Add console log here
     console.log("Updating date for id:", id);
   
     const email = user?.email;

@@ -19,17 +19,11 @@ const Home = () => {
       <div>
     
       <dialog id="my_modal_1" className="modal ">
-        <div className="modal-box w-[80vh] bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-gray-200">
+        <div className="modal-box w-[80vh]  bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-gray-200">
           <div>
-          <div className="hero " style={{backgroundImage: 'url(https://i.ibb.co/Y7V6cRK/newsleeter.jpg)'}}>
+          <div className="hero h-[50vh] " style={{backgroundImage: 'url(https://i.ibb.co/Br41XXd/offer.jpg)'}}>
   <div className="hero-overlay bg-opacity-60"></div>
-  <div className="hero-content text-center text-neutral-content">
-    <div className="max-w-md">
-      <h1 className="mb-5 text-5xl font-bold text-red-700">50% Discount For New User</h1>
-     
-   
-    </div>
-  </div>
+ 
 </div>
           </div>
           <div className="modal-action">
