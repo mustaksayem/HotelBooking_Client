@@ -153,12 +153,12 @@ const Navbar = () => {
           )}
 
           {/* User Menu */}
-          <div className={`absolute text-center ${userOpen ? "block" : "hidden"} flex flex-col justify-center items-center gap-4 shadow-lg bg-white dark:bg-[#120505] px-1 lg:px-8 py-4 top-16 dark:text-white z-50`}>
+          <div className={`absolute text-center ${userOpen ? "block" : "hidden"} flex flex-col justify-center items-center gap-4 shadow-lg bg-white dark:bg-[#120505] px-1  py-4 top-16 dark:text-white z-50`}>
             <p className="text-lg font-semibold">{user?.displayName}</p>
 
             <button
               onClick={() => handleLogOut()}
-              className="bg-[#FF497C] hover:bg-[#ab3154] duration-200 text-white font-bold px-1 lg:px-4 xl:px-6 py-1 rounded cursor-pointer"
+              className="bg-[#FF497C] hover:bg-[#ab3154] duration-200 text-white font-bold  py-1 rounded cursor-pointer"
             >
               Logout
             </button>
