@@ -1,8 +1,19 @@
-# React + Vite
+# RoomRover
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Click to visit [RoomRover](https://assignment-11-b42b6.web.app/)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features and Characteristics
+
+- **Can CRUD operation** 
+  
+- **Change the Theme**
+  
+- **Can give revire** 
+  
+- **Login With Email, GitHub and Google** 
+  
+- **See All Rooms**
+
+## Selected Catagory is  Assignment_ID: assignment_category_0004
+

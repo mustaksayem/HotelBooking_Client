@@ -7,7 +7,7 @@ import axios from "axios";
 
 const Register = () => {
     const navigate = useNavigate()
-    const {createUser,updateUserProfile,user,setUser}=useContext(AuthContext)
+    const {createUser,updateUserProfile,user,setUser,setLoading}=useContext(AuthContext)
     const handleSignUp = async (e) => {
         e.preventDefault();
         const form = e.target;
@@ -44,7 +44,7 @@ const Register = () => {
             { email: result?.user?.email },
             { withCredentials: true }
           );
-          // setLoading(false);
+          setLoading(false);
           navigate(location?.state ? location.state : "/");
           toast.success("Registration successful");
         } catch (err) {

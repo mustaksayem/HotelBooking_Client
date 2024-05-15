@@ -75,7 +75,7 @@ const Navbar = () => {
           </div>
           <Link to='/' className='flex gap-2 items-center'>
             <img className='w-auto h-7' src="https://i.ibb.co/FVW22BR/logo.png" alt='' />
-            <span className='font-bold'>SoloSphere</span>
+            <span className='font-bold'>RoomRover</span>
           </Link>
         </div>
 

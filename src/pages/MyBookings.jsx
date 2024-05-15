@@ -146,7 +146,7 @@ const MyBookings = () => {
                         </td>
 
                         <td className=' px-4 py-3.5  text-sm whitespace-nowrap'>
-                          <div className='flex justify-around  '>
+                          <div className='flex justify-around flex-col lg:flex-row '>
                             <div>
                               <Link
                                 to={`/update/${post._id}`}

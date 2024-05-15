@@ -106,9 +106,9 @@ const RoomDetails = () => {
        
       </Swiper>
         </div>
-        <div className="w-1/3  ">
-          <h2 className="text-[40px] font-bold text-gray-500">{room_description}</h2>
-          <p className="mt-4 mb-6 font-medium text-xl text-gray-500">Room Size: {room_size}</p>
+        <div className="w-full md:w-1/3  ">
+          <h2 className="text-xl md:text-[40px] font-bold text-gray-500">{room_description}</h2>
+          <p className="mt-4 mb-6 font-medium text-base md:text-lg lg:text-xl text-gray-500">Room Size: {room_size}</p>
           <p className="mt-4 mb-6 font-medium text-xl text-gray-500">Price per night: ${price_per_night}</p>
           <p className="mt-4 mb-6 font-medium text-xl text-gray-500">Availability: {availability}</p>
           <p className="mt-4 mb-6 font-medium text-xl text-gray-500">Offer: {special_offers}</p>

@@ -6,7 +6,7 @@ import toast from 'react-hot-toast'
 import { Helmet } from "react-helmet-async"
 import axios from "axios"
 const Login = () => {
-  const {signIn,signInWithGoogle,user,loading}=useContext(AuthContext)
+  const {signIn,signInWithGoogle,user,loading,setLoading}=useContext(AuthContext)
   const navigate = useNavigate();
   useEffect(() => {
     if (user) {
@@ -24,6 +24,7 @@ const Login = () => {
       { withCredentials: true }
     );
     console.log(data);
+    setLoading(false);
     toast.success('Signin sucessfully')
     navigate ('/') 
    }
@@ -48,6 +49,7 @@ const Login = () => {
             );
             console.log(result);
             console.log(data);
+            setLoading(false);
             navigate('/')
             toast.success('Signin Sucessfully')
         }
